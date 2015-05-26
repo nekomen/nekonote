@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>BookMarklets</title>
+    <link rel="shortcut icon" href="nekohan_v4f.ico">
+    <meta charset="UTF-8">
+    <meta name="ROBOTS" content="NOINDEX,NOFOLLOW">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <style type="text/css">
+    <!--
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        background:#fff;
+        margin: 0;
+        -webkit-text-size-adjust: 100%;/*縦向き (Portrate mode) と横向き (Landscape mode) の文字サイズを自動調整*/
+      }
+      body, html, .divMain {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+      }
+      .divMain {
+        width:80%;
+        display:inline-block;
+      }
+      .btn {
+        font-size: 16px;
+        color: #fff;
+        background: #000066;
+        border: 1px solid #333;
+        display: block;
+        text-align: center;
+        width: 150px;
+        height: 26px;
+        line-height: 26px;
+        white-space:nowrap;
+        margin: 5px auto 10px auto;
+        padding: 4px 10px 2px 10px;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        text-decoration: none;
+        background:#000099;
+         transition: background-color 0.3s;
+      }
+      .btnS{
+        font-size:11pt;
+      }
+      .btn:hover {
+        background: #0000cc;
+      }
+      .divH {
+        font-style: normal;
+        font-size: 22pt;
+        width: 100%;
+        height: 60px;
+        text-align:center;
+        background: #0592d0;
+        color: #fff;
+        box-shadow: rgba(0, 0, 68, 0.6) 0px 0px 4px 2px;
+        -webkit-box-shadow: rgba(0, 0, 68, 0.6) 0px 0px 4px 2px;
+        -moz-box-shadow: rgba(0, 0, 68, 0.6) 0px 0px 4px 2px;
+        margin-bottom: 10px;
+      }
+        .divH > div {
+          display: inline-table;
+          height: 60px;
+        }
+       .ulH, .ulA, .ulA > ul {
+          list-style: none;
+        }
+        .ulH, .ulA {
+          display: table-row;
+        }
+        .ulA > ul {
+          display: inline-table;
+        }
+        .ulH >li, .ulA > li > ul > li {
+          display: table-cell;
+          vertical-align:middle;
+        }
+            .ulA > li > ul > li:nth-child(2) {
+              padding-left: 8px;
+            }
+          .ulH > li:nth-child(2) {
+            padding-left:6px;
+          }
+
+      .spnExp {
+        font-size: 12pt;
+        margin-bottom: 100px;
+        font-weight: normal;
+      }
+      .divFooter {
+        margin: 100px 0px;
+      }
+       .spnFooter {
+        font-size: 10pt;
+        font-weight: normal;
+      }
+      .divExp {
+        text-align: left;
+        line-height: 1.2em;
+        font-size: 11pt;
+        margin: 10px 0px;
+      }
+      .divExp > span:first-child {
+        font-size: 16pt;
+        line-height:32pt;
+      }
+
+      hr {
+        margin:30px 0px;
+      }
+
+          -->
+    </style>
+</head>
+<body>
+
+  <div class="divH">
+    <div>
+      <ul class="ulH">
+        <li><img alt="" src="nekomen48.png" style="width:48px;height:48px;display:inline;" /></li>
+        <li>Ingress用ブックマークレット集</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divMain">
+    <span class="spnExp">各ボタンをお気に入りバーにドラッグ&ドロップしてご使用ください<br />サーバーにアクセスしているわけではないので、Intel Map BANはないと思います<br /></span>
+    <div class="divExp">
+      <span>■ポータル情報取得くん v3.0(更新日：20150526)</span><br />
+      [説明]<br />
+      Intel Map で選択したポータル情報をクリップボードに入れる<br />
+      <br />
+        [使用方法]<br />
+        ①intelマップを開く<br />
+        ②ブックマークレットを実行<br />
+③目標のポータルをクリック<br />
+④Ctrl+C（コピー）<br />
+<br />
+※①②は一度やればOK。③～④は繰り返し実行可能<br />
+※違う②で機能の切り替えが可能<br />
+※console.logにクリップボードに入れたデータが表示されるので、確認と連続使用などにどうぞ<br />
+&nbsp;&nbsp;（WindowsではF12キーを押すと出てくる developer tools の中のconsoleで確認できる）<br />
+<br />
+[改訂情報]<br />
+※リンク補助線が入ると上手く動作しないのを改良（v2.0～）<br />
+※ポータル選択後に都度、右上のLinkボタンを押す必要をなくした（v3.0～）<br />
+※右上のLinkボタンでMap Linkウィンドウを出しているときは Map linkを優先してコピーする（v3.0～）<br />
+※console.logにクリップボードに入れたデータを表示するようにした（v3.0～）<br />
+</div>
+    <ul class="ulA">
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名</a>
+          </li>
+          <li>
+            ex：札幌駅 中央北口
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <a href="" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク</a>
+          </li>
+          <li>
+            ex：札幌駅 中央北口	https://www.ingress.com/intel?ll=43.069549,141.351946&z=17&pll=43.069072,141.350746
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+座標</a>
+          </li>
+          <li>
+            ex：札幌駅 中央北口	43.069072	141.350746
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク+座標</a>
+          </li>
+          <li>
+            ex：札幌駅 中央北口	https://www.ingress.com/intel?ll=43.068405,141.351292&z=17&pll=43.069072,141.350746	43.069072	141.350746
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp;if(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1){var pc=document.getElementById('portal_info_windows').className;var clr=(!pc.indexOf('NEUTRAL'))?'白':(pc.indexOf('RES'))?'緑':'青';var pv=document.getElementById('portal_primary_title').firstChild.nodeValue;var ow=(clr!=='白')?':'+document.getElementById('portal_capture_details').firstChild.innerHTML:'';cmp=pv+' ('+clr+ow+')'}else{cmp=mv}e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn btnS" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名(色:Owner)</a>
+          </li>
+          <li>
+            ex：札幌駅 中央北口 (青:nekomen)
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+
+    <hr />
+
+    <div class="divExp">
+  <span>■ポータル名から検索くん v1.0(更新日：20150524)</span><br />
+[説明]<br />
+ミッション作成ツールで表示したポータルを、<br />
+Google Mapを表示させた後に Intel Map で周辺を表示させる<br />
+<br />
+[使用方法]<br />
+①ミッション作成ツールで広域で地図を表示します<br />
+②名前で検索したりしてポータルを表示させます<br />
+③対象ポータルを中央に拡大して表示<br />
+④左下にある『Google』を押す<br />
+⑤Google Map が開くのでURLが落ち着くまで少し待つ<br />
+⑥ブックマークレットを実行する<br />
+⑦Intel Mapで周辺地域が開かれる<br />
+</div>
+    <ul class="ulA">
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:(function(){var url=location.href;url=url.replace('https://www.google.com/maps/@','');var arr=url.split(',');window.open('https://www.ingress.com/intel?ll='+arr[0]+','+arr[1]+'&z='+arr[2].split('z')[0])})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MissionToMap</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr />
+
+    <div class="divExp">
+      <span>■デプロイれぞねーたん v2.0(更新日：20150524)</span><br />
+      [説明]<br />
+      実行するたびにR1～R8のれぞねーたんが<br />
+      Intel Map に降臨する。クリックすると跳ねる<br />
+      <br />
+      [使用方法]<br />
+      ①intelマップを開く<br />
+      ②ブックマークレットを実行<br />
+    </div>
+    <ul class="ulA">
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:(function(d,s){s=d.createElement('script');s.src='https://googledrive.com/host/0By0NVcJIpH_2VEN4dkJJNEVneGs';d.body.appendChild(s);})(document)" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">れぞねーたん</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+      <div class="divFooter">
+        <span class="spnFooter">Only Resistance available.</span><br /><br />
+      </div>
+
+</div>
+    <script type="text/javascript">
+    <!--
+
+      /*
+
+      //名前
+      javascript: document.oncopy = function (e) {
+        setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
+        setTimeout((function () {
+          var mv = document.getElementById('maplink').value;
+          var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) ? document.getElementById('portal_primary_title').firstChild.nodeValue : mv;
+          e.preventDefault();
+          e.clipboardData.setData('text', cmp); console.log(cmp);
+        })(e), 50);
+      }
+
+      //名前+リンク
+      javascript:
+        document.oncopy = function (e) {
+          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
+          setTimeout((function () {
+            var mv = document.getElementById('maplink').value;
+            var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) ? document.getElementById('portal_primary_title').firstChild.nodeValue + '\t' + mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1] :
+              mv;
+            e.preventDefault();
+            e.clipboardData.setData('text', cmp); console.log(cmp);
+          })(e), 50)
+        }
+
+      //名前+色+オーナー
+      javascript:
+        document.oncopy = function (e) {
+          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
+          setTimeout((function () {
+            var mv = document.getElementById('maplink').value;
+            var cmp;
+            if (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) {
+              var pc = document.getElementById('portal_info_windows').className; var clr = (!pc.indexOf('NEUTRAL')) ? '白' : (pc.indexOf('RES')) ? '緑' : '青'; var pv = document.getElementById('portal_primary_title').firstChild.nodeValue; var ow = (clr !== '白') ? ':' + document.getElementById('portal_capture_details').firstChild.innerHTML : ''; cmp = pv + ' (' + clr + ow + ')';
+            } else {
+              cmp = mv;
+            }
+            e.preventDefault();
+            e.clipboardData.setData('text', cmp); console.log(cmp);
+          })(e), 50)
+        }
+
+      //名前+座標
+      javascript:
+        document.oncopy = function (e) {
+          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
+          setTimeout((function () {
+            var mv = document.getElementById('maplink').value;
+            var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1)?document.getElementById('portal_primary_title').firstChild.nodeValue + '\t' + (mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1]).replace(/https(.*)pll=/, '').replace(/,/, '\t'):mv;
+            e.preventDefault();
+            e.clipboardData.setData('text', cmp); console.log(cmp);
+          })(e), 50)
+        }
+
+      //名前+リンク+座標
+      javascript:
+        document.oncopy = function (e) {
+          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
+          setTimeout((function () {
+            var mv = document.getElementById('maplink').value;
+            var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) ? document.getElementById('portal_primary_title').firstChild.nodeValue + '\t' + mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1] + '\t' + (mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1]).replace(/https(.*)pll=/, '').replace(/,/, '\t') : mv;
+            e.preventDefault();
+            e.clipboardData.setData('text', cmp); console.log(cmp);
+          })(e), 50)
+        }
+
+        */
+
+    //-->
+    </script>
+</body>
+</html>
