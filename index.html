@@ -223,6 +223,33 @@
     <hr />
 
     <div class="divExp">
+      <span>■ポータル名から検索くん v2.0(更新日：20150527)</span><br />
+      [説明]<br />
+      ミッション作成ツールで表示したポータルを、<br />
+      Google Mapを表示させた後に Intel Map で周辺を表示させる<br />
+      <br />
+      [使用方法]<br />
+      ①ミッション作成ツールで広域で地図を表示します<br />
+      ②名前で検索したりしてポータルを表示させます<br />
+      ③対象ポータルを中央に拡大して表示<br />
+      ④ブックマークレットを実行する<br />
+      ⑤Intel Mapで周辺地域が開かれる<br />
+      <br />
+      [改訂情報]<br />
+      ※③の後にGoogle Mapへ行かなくても済むように改良（by Bombas）（v2.0～）<br />
+    </div>
+    <ul class="ulA">
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:(function(){var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('http://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open('https://www.ingress.com/intel?ll='+arr[0]+','+arr[1]+'&z='+arr[2])})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MissionToMap</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!--
+    <div class="divExp">
   <span>■ポータル名から検索くん v1.0(更新日：20150524)</span><br />
 [説明]<br />
 ミッション作成ツールで表示したポータルを、<br />
@@ -246,6 +273,7 @@ Google Mapを表示させた後に Intel Map で周辺を表示させる<br />
         </ul>
       </li>
     </ul>
+      -->
 
     <hr />
 
