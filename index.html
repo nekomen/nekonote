@@ -167,7 +167,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名</a>
+            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名</a>
           </li>
           <li>
             ex：札幌駅 中央北口
@@ -177,7 +177,7 @@
       <li>
         <ul>
           <li>
-            <a href="" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク</a>
+            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク</a>
           </li>
           <li>
             ex：札幌駅 中央北口	https://www.ingress.com/intel?ll=43.069549,141.351946&z=17&pll=43.069072,141.350746
@@ -188,7 +188,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+座標</a>
+            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+座標</a>
           </li>
           <li>
             ex：札幌駅 中央北口	43.069072	141.350746
@@ -199,7 +199,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク+座標</a>
+            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク+座標</a>
           </li>
           <li>
             ex：札幌駅 中央北口	https://www.ingress.com/intel?ll=43.068405,141.351292&z=17&pll=43.069072,141.350746	43.069072	141.350746
@@ -210,7 +210,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){setTimeout((function(){sbox(e);displaymaplink()})(e),0);setTimeout((function(){var mv=document.getElementById('maplink').value;var cmp;if(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1){var pc=document.getElementById('portal_info_windows').className;var clr=(!pc.indexOf('NEUTRAL'))?'白':(pc.indexOf('RES'))?'緑':'青';var pv=document.getElementById('portal_primary_title').firstChild.nodeValue;var ow=(clr!=='白')?':'+document.getElementById('portal_capture_details').firstChild.innerHTML:'';cmp=pv+' ('+clr+ow+')'}else{cmp=mv}e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)})(e),50)}" class="btn btnS" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名(色:Owner)</a>
+            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp;if(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1){var pc=document.getElementById('portal_info_windows').className;var clr=(!pc.indexOf('NEUTRAL'))?'白':(pc.indexOf('RES'))?'緑':'青';var pv=document.getElementById('portal_primary_title').firstChild.nodeValue;var ow=(clr!=='白')?':'+document.getElementById('portal_capture_details').firstChild.innerHTML:'';cmp=pv+' ('+clr+ow+')'}else{cmp=mv}e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn btnS" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名(色:Owner)</a>
           </li>
           <li>
             ex：札幌駅 中央北口 (青:nekomen)
@@ -229,7 +229,7 @@
       Google Mapを表示させた後に Intel Map で周辺を表示させる<br />
       <br />
       [使用方法]<br />
-      ①ミッション作成ツールで広域で地図を表示します<br />
+      ①ミッション作成ツールにて広域で地図を表示します<br />
       ②名前で検索したりしてポータルを表示させます<br />
       ③対象ポータルを中央に拡大して表示<br />
       ④ブックマークレットを実行する<br />
@@ -304,75 +304,6 @@ Google Mapを表示させた後に Intel Map で周辺を表示させる<br />
 </div>
     <script type="text/javascript">
     <!--
-
-      /*
-
-      //名前
-      javascript: document.oncopy = function (e) {
-        setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
-        setTimeout((function () {
-          var mv = document.getElementById('maplink').value;
-          var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) ? document.getElementById('portal_primary_title').firstChild.nodeValue : mv;
-          e.preventDefault();
-          e.clipboardData.setData('text', cmp); console.log(cmp);
-        })(e), 50);
-      }
-
-      //名前+リンク
-      javascript:
-        document.oncopy = function (e) {
-          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
-          setTimeout((function () {
-            var mv = document.getElementById('maplink').value;
-            var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) ? document.getElementById('portal_primary_title').firstChild.nodeValue + '\t' + mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1] :
-              mv;
-            e.preventDefault();
-            e.clipboardData.setData('text', cmp); console.log(cmp);
-          })(e), 50)
-        }
-
-      //名前+色+オーナー
-      javascript:
-        document.oncopy = function (e) {
-          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
-          setTimeout((function () {
-            var mv = document.getElementById('maplink').value;
-            var cmp;
-            if (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) {
-              var pc = document.getElementById('portal_info_windows').className; var clr = (!pc.indexOf('NEUTRAL')) ? '白' : (pc.indexOf('RES')) ? '緑' : '青'; var pv = document.getElementById('portal_primary_title').firstChild.nodeValue; var ow = (clr !== '白') ? ':' + document.getElementById('portal_capture_details').firstChild.innerHTML : ''; cmp = pv + ' (' + clr + ow + ')';
-            } else {
-              cmp = mv;
-            }
-            e.preventDefault();
-            e.clipboardData.setData('text', cmp); console.log(cmp);
-          })(e), 50)
-        }
-
-      //名前+座標
-      javascript:
-        document.oncopy = function (e) {
-          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
-          setTimeout((function () {
-            var mv = document.getElementById('maplink').value;
-            var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1)?document.getElementById('portal_primary_title').firstChild.nodeValue + '\t' + (mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1]).replace(/https(.*)pll=/, '').replace(/,/, '\t'):mv;
-            e.preventDefault();
-            e.clipboardData.setData('text', cmp); console.log(cmp);
-          })(e), 50)
-        }
-
-      //名前+リンク+座標
-      javascript:
-        document.oncopy = function (e) {
-          setTimeout((function () { sbox(e); displaymaplink() })(e), 0);
-          setTimeout((function () {
-            var mv = document.getElementById('maplink').value;
-            var cmp = (document.getElementById('portal_info_windows') && document.getElementById('header_maplink').className.indexOf('show_box') === -1) ? document.getElementById('portal_primary_title').firstChild.nodeValue + '\t' + mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1] + '\t' + (mv.substr(0, mv.indexOf('&', mv.indexOf('&') + 1)) + '&pll=' + mv.split('&pll=')[1]).replace(/https(.*)pll=/, '').replace(/,/, '\t') : mv;
-            e.preventDefault();
-            e.clipboardData.setData('text', cmp); console.log(cmp);
-          })(e), 50)
-        }
-
-        */
 
     //-->
     </script>
