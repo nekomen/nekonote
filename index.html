@@ -142,7 +142,7 @@
   <div class="divMain">
     <span class="spnExp">各ボタンをお気に入りバーにドラッグ&ドロップしてご使用ください<br />サーバーにアクセスしているわけではないので、Intel Map BANにはならないハズ<br /></span>
     <div class="divExp">
-      <span>■ポータル情報取得くん v3.1(更新日：20150527)</span><br />
+      <span>■ポータル情報取得くん v3.2(更新日：20150603)</span><br />
       [説明]<br />
       Intel Map で選択したポータル情報をクリップボードに入れる<br />
       <br />
@@ -167,7 +167,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名</a>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名</a>
           </li>
           <li>
             ex：札幌駅 中央北口
@@ -177,7 +177,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク</a>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク</a>
           </li>
           <li>
             ex：札幌駅 中央北口	https://www.ingress.com/intel?ll=43.069549,141.351946&z=17&pll=43.069072,141.350746
@@ -188,7 +188,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+座標</a>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+座標</a>
           </li>
           <li>
             ex：札幌駅 中央北口	43.069072	141.350746
@@ -199,7 +199,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク+座標</a>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク+座標</a>
           </li>
           <li>
             ex：札幌駅 中央北口	https://www.ingress.com/intel?ll=43.068405,141.351292&z=17&pll=43.069072,141.350746	43.069072	141.350746
@@ -210,7 +210,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){sbox(e);displaymaplink();var mv=document.getElementById('maplink').value;var cmp;if(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1){var pc=document.getElementById('portal_info_windows').className;var clr=(!pc.indexOf('NEUTRAL'))?'白':(pc.indexOf('RES'))?'緑':'青';var pv=document.getElementById('portal_primary_title').firstChild.nodeValue;var ow=(clr!=='白')?':'+document.getElementById('portal_capture_details').firstChild.innerHTML:'';cmp=pv+' ('+clr+ow+')'}else{cmp=mv}e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn btnS" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名(色:Owner)</a>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp;if(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1){var pc=document.getElementById('portal_info_windows').className;var clr=(!pc.indexOf('NEUTRAL'))?'白':(pc.indexOf('RES'))?'緑':'青';var pv=document.getElementById('portal_primary_title').firstChild.nodeValue;var ow=(clr!=='白')?':'+document.getElementById('portal_capture_details').firstChild.innerHTML:'';cmp=pv+' ('+clr+ow+')'}else{cmp=mv}e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn btnS" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名(色:Owner)</a>
           </li>
           <li>
             ex：札幌駅 中央北口 (青:nekomen)
