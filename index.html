@@ -217,9 +217,7 @@
           </li>
         </ul>
       </li>
-
     </ul>
-
     <hr />
 
     <div class="divExp">
@@ -242,39 +240,35 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:(function(){var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('http://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open('https://www.ingress.com/intel?ll='+arr[0]+','+arr[1]+'&z='+arr[2])})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MissionToMap</a>
+            <a href="javascript:(function(){var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('http://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open('https://www.ingress.com/intel?ll='+arr[0]+','+arr[1]+'&z='+arr[2])})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MissionToIntel</a>
           </li>
         </ul>
       </li>
     </ul>
+    <hr />
 
-    <!--
     <div class="divExp">
-  <span>■ポータル名から検索くん v1.0(更新日：20150524)</span><br />
-[説明]<br />
-ミッション作成ツールで表示したポータルを、<br />
-Google Mapを表示させた後に Intel Map で周辺を表示させる<br />
-<br />
-[使用方法]<br />
-①ミッション作成ツールで広域で地図を表示します<br />
-②名前で検索したりしてポータルを表示させます<br />
-③対象ポータルを中央に拡大して表示<br />
-④左下にある『Google』を押す<br />
-⑤Google Map が開くのでURLが落ち着くまで少し待つ<br />
-⑥ブックマークレットを実行する<br />
-⑦Intel Mapで周辺地域が開かれる<br />
-</div>
+      <span>■Google Mapで見たいんじゃ v1.0(更新日：20150604)</span><br />
+      [説明]<br />
+      Intel Map で表示させたポータルを、<br />
+      Google Map のピン有りで表示させます<br />
+      ※ポータルを選択しない場合、Google Map で開くだけ<br />
+      <br />
+      [使用方法]<br />
+      ①Intel Map でポータルを選択<br />
+      ②ブックマークレットを実行<br />
+      ③Google Map で開かれる<br />
+      <br />
+    </div>
     <ul class="ulA">
       <li>
         <ul>
           <li>
-            <a href="javascript:(function(){var url=location.href;url=url.replace('https://www.google.com/maps/@','');var arr=url.split(',');window.open('https://www.ingress.com/intel?ll='+arr[0]+','+arr[1]+'&z='+arr[2].split('z')[0])})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MissionToMap</a>
+            <a href="javascript:(function(){var intel='https://www.ingress.com/intel?ll=';if(location.href.indexOf(intel,0)===-1)return;var maps='http://maps.google.co.jp/maps?ll=';displaymaplink();var mv=document.getElementById('maplink').value;var z=mv.replace(/(.*)&z=/,'').replace(/&pll=(.*)/,'');var ll=mv.replace(/https(.*)\?ll=/,'').split(',');var url=maps+ll[0]+','+ll[1].replace(/&z=(.*)/,'')+'&z='+z;if(mv.indexOf('pll',0)>-1){var pll=mv.replace(/https(.*)pll=/,'').split(',');url+='&q='+pll[0]+','+pll[1]}window.open(url)})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">IntelToMap</a>
           </li>
         </ul>
       </li>
     </ul>
-      -->
-
     <hr />
 
     <div class="divExp">
