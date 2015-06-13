@@ -140,7 +140,12 @@
   </div>
 
   <div class="divMain">
-    <span class="spnExp">各ボタンをお気に入りバーにドラッグ&ドロップしてご使用ください<br />サーバーにアクセスしているわけではないので、Intel Map BANにはならないハズ<br /></span>
+    <span class="spnExp">各ボタンをお気に入りバーにドラッグ&ドロップしてご使用ください。<br />
+      バグとか何か要望があれば<a href="https://plus.google.com/+nekomen/" target="_blank">nekomen</a>まで連絡ください。<br />
+      <br />
+      ※改変はご自由にどうぞ。<br />
+      ※このページの外部へのリンクなどはご遠慮ください。<br />
+    </span>
     <div class="divExp">
       <span>■ポータル情報取得くん v3.2(更新日：20150603)</span><br />
       [説明]<br />
@@ -177,7 +182,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+リンク</a>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]:mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名+リンク</a>
           </li>
           <li>
             ex：札幌駅 中央北口	https://www.ingress.com/intel?ll=43.069549,141.351946&z=17&pll=43.069072,141.350746
@@ -188,7 +193,7 @@
       <li>
         <ul>
           <li>
-            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポタ名+座標</a>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+(mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]).replace(/https(.*)pll=/,'').replace(/,/,'\t'):mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名+座標</a>
           </li>
           <li>
             ex：札幌駅 中央北口	43.069072	141.350746
@@ -214,6 +219,63 @@
           </li>
           <li>
             ex：札幌駅 中央北口 (青:nekomen)
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+
+    <div class="divExp">
+      <span>■君と僕との距離 v1.0(更新日：20150613)</span><br />
+      [説明]<br />
+      ポータル間の距離をkmで求めます。<br />
+      （Bombasさん作成の距離を求めるブックマークレットを自分用に改造したもの）<br />
+      <br />
+      [使用方法]<br />
+      ①インテルマップを表示<br />
+      ②ブックマークレットを実行<br />
+      ③開発者ツールでコンソールを表示させる（※必須ではない）<br />
+      ④ポータルを選択(A)<br />
+      ⑤Ctrl+C (Cosoleに ポータル名 + リンク)<br />
+      ⑥ポータルを選択(B)<br />
+      ⑦Ctrl+C (Cosoleに ポータル名 + リンク)<br />
+      ⑧クリップボードとCosoleに以下の情報が設定されます。<br />
+      距離(km)+ポータル名(A)+座標(A)+ポータル名(B)+座標(B)<br />
+      ※続けてポータルを選択(C)した場合、B～C間の距離を求めます。<br />
+      <br />
+    </div>
+    <ul class="ulA">
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:var p1='',l1='',p2='',l2='',la1=0,lo1=0,la2=0,lo2=0;document.oncopy=function(e){displaymaplink();var ml=document.getElementById('maplink').value;if(document.getElementById('header_maplink').className.indexOf('show_box')>-1){e.preventDefault();e.clipboardData.setData('text',ml);console.log(ml);return}if(!document.getElementById('portal_info_windows'))return;var cmp=(document.getElementById('header_maplink').className.indexOf('show_box')===-1)?document.getElementById('portal_primary_title').firstChild.nodeValue+'\t'+ml.substr(0,ml.indexOf('&',ml.indexOf('&')+1))+'&pll='+ml.split('&pll=')[1]:ml;console.log(cmp);var p0=document.getElementById('portal_primary_title').firstChild.nodeValue;var ll=ml.replace(/https(.*)pll=/,'');var arr=ll.split(',');p2=p0;l2=ll;la2=arr[0];lo2=arr[1];var k=p1+'\t'+l1+'\t'+p2+'\t'+l2;if(p1!=''&&p2!=''){var a_lat=la1*Math.PI/180;var a_lon=lo1*Math.PI/180;var b_lat=la2*Math.PI/180;var b_lon=lo2*Math.PI/180;var latave=(a_lat+b_lat)/2;var latidiff=a_lat-b_lat;var longdiff=a_lon-b_lon;var meridian=6335439/Math.sqrt(Math.pow(1-0.006694*Math.sin(latave)*Math.sin(latave),3));var primevertical=6378137/Math.sqrt(1-0.006694*Math.sin(latave)*Math.sin(latave));var x=meridian*latidiff;var y=primevertical*Math.cos(latave)*longdiff;k=Math.round(Math.sqrt(Math.pow(x,2)+Math.pow(y,2))/10)/100+'\tkm\t'+k;e.preventDefault();e.clipboardData.setData('text',k);console.log(k);}p1=p2;l1=l2;la1=la2;lo1=lo2}" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル距離(km)</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+
+    <div class="divExp">
+      <span>■Map to Map v1.0(更新日：20150613)</span><br />
+      [説明]<br />
+      下記二つのMap用を合わせて、さらに Google Map → Intel Mapを追加した<br />
+      ※これだけ登録しておけば、下記二つは必要ない<br />
+      <br />
+      Intel Map で表示中はGoogle Mapへ<br />
+      Google Map で表示中はIntel Mapへ<br />
+      ミッション作成ツールはIntel Map へ<br />
+      <br />
+      [使用方法]<br />
+      ①Mapを開く（ポータル選択や拡大などする）<br />
+      ②ブックマークレットを実行<br />
+      ③新しいWindowが開かれる<br />
+      <br />
+    </div>
+    <ul class="ulA">
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:(function(){var intel='https://www.ingress.com/intel?ll=';switch(true){case(location.href.indexOf(intel,0)>-1):var maps='http://maps.google.co.jp/maps?ll=';displaymaplink();var mv=document.getElementById('maplink').value;var z=mv.replace(/(.*)&z=/,'').replace(/&pll=(.*)/,'');var ll=mv.replace(/https(.*)\?ll=/,'').split(',');var url=maps+ll[0]+','+ll[1].replace(/&z=(.*)/,'')+'&z='+z;if(mv.indexOf('pll',0)>-1){var pll=mv.replace(/https(.*)pll=/,'').split(',');url+='&q='+pll[0]+','+pll[1]}window.open(url);break;case(location.href.indexOf('https://mission-author-dot-betaspike.appspot.com',0)>-1):var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('http://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open(intel+arr[0]+','+arr[1]+'&z='+arr[2]);break;case(/google(.+)maps/.test(location.href)):var url=location.href.replace(/(.*)@/,'').replace(/z(.*)/,'');var arr=url.split(',');window.open(intel+arr[0]+','+arr[1]+'&z='+arr[2]);break;default:return}})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MapToMap</a>
           </li>
         </ul>
       </li>
@@ -274,8 +336,8 @@
     <div class="divExp">
       <span>■デプロイれぞねーたん v2.0(更新日：20150524)</span><br />
       [説明]<br />
-      実行するたびにR1～R8のれぞねーたんが Intel Map に降臨する<br />
-      ドラッグ可能。クリックすると跳ねる<br />
+      実行するたびにR1～R8のれぞねーたん（北海道RES非公認キャラクター）が Intel Map に降臨する<br />
+      ドラッグ可能。クリックすると跳ねる。実用性はない<br />
       <br />
       [使用方法]<br />
       ①intelマップを開く<br />
