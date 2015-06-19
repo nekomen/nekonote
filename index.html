@@ -147,7 +147,7 @@
       ※このページの外部へのリンクなどはご遠慮ください。<br />
     </span>
     <div class="divExp">
-      <span>■ポータル情報取得くん v3.2(更新日：20150603)</span><br />
+      <span>■ポータル情報取得くん v3.3(更新日：20150619)</span><br />
       [説明]<br />
       Intel Map で選択したポータル情報をクリップボードに入れる<br />
       <br />
@@ -167,6 +167,7 @@
 ※ポータル選択後に都度、右上のLinkボタンを押す必要をなくした（v3.0～）<br />
 ※右上のLinkボタンでMap Linkウィンドウを出しているときは Map linkを優先してコピーすることにした（v3.0～）<br />
 ※console.logにクリップボードに入れたデータを表示するようにした（v3.0～）<br />
+※Googleスプレッドシート用にリンクつきポータル名をコピペできるものを追加（v3.3～）<br />
 </div>
     <ul class="ulA">
       <li>
@@ -222,6 +223,20 @@
           </li>
         </ul>
       </li>
+
+      <li>
+        <ul>
+          <li>
+            <a href="javascript:document.oncopy=function(e){displaymaplink();var mv=document.getElementById('maplink').value;var cmp=(document.getElementById('portal_info_windows')&&document.getElementById('header_maplink').className.indexOf('show_box')===-1)?'=HYPERLINK(\u0022'+mv.substr(0,mv.indexOf('&',mv.indexOf('&')+1))+'&pll='+mv.split('&pll=')[1]+'\u0022,\u0022'+document.getElementById('portal_primary_title').firstChild.nodeValue+'\u0022)':mv;e.preventDefault();e.clipboardData.setData('text',cmp);console.log(cmp)}" class="btn btnS" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">ポータル名SP</a>
+          </li>
+          <li>
+            ex：=HYPERLINK("https://www.ingress.com/intel?ll=43.068891,141.35259&z=17&pll=43.069072,141.350746","札幌駅 中央北口")
+          </li>
+        </ul>
+      </li>
+
+      //
+
     </ul>
     <hr />
 
