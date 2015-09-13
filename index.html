@@ -271,7 +271,7 @@
     <hr />
 
     <div class="divExp">
-      <span>■Map to Map v1.0(更新日：20150613)</span><br />
+      <span>■Map to Map v1.1(更新日：20150913)</span><br />
       [説明]<br />
       下記二つのMap用を合わせて、さらに Google Map → Intel Mapを追加した<br />
       ※これだけ登録しておけば、下記二つは必要ない<br />
@@ -285,12 +285,14 @@
       ②ブックマークレットを実行<br />
       ③新しいWindowが開かれる<br />
       <br />
+      [改訂情報]<br />
+      ※httpからhttpsに変更しないと上手く飛べなくなってたので修正（v1.1～）
     </div>
     <ul class="ulA">
       <li>
         <ul>
           <li>
-            <a href="javascript:(function(){var intel='https://www.ingress.com/intel?ll=';switch(true){case(location.href.indexOf(intel,0)>-1):var maps='http://maps.google.co.jp/maps?ll=';displaymaplink();var mv=document.getElementById('maplink').value;var z=mv.replace(/(.*)&z=/,'').replace(/&pll=(.*)/,'');var ll=mv.replace(/https(.*)\?ll=/,'').split(',');var url=maps+ll[0]+','+ll[1].replace(/&z=(.*)/,'')+'&z='+z;if(mv.indexOf('pll',0)>-1){var pll=mv.replace(/https(.*)pll=/,'').split(',');url+='&q='+pll[0]+','+pll[1]}window.open(url);break;case(location.href.indexOf('https://mission-author-dot-betaspike.appspot.com',0)>-1):var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('http://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open(intel+arr[0]+','+arr[1]+'&z='+arr[2]);break;case(/google(.+)maps/.test(location.href)):var url=location.href.replace(/(.*)@/,'').replace(/z(.*)/,'');var arr=url.split(',');window.open(intel+arr[0]+','+arr[1]+'&z='+arr[2]);break;default:return}})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MapToMap</a>
+            <a href="javascript:(function(){var intel='https://www.ingress.com/intel?ll=';switch(true){case(location.href.indexOf(intel,0)>-1):var maps='https://maps.google.co.jp/maps?ll=';displaymaplink();var mv=document.getElementById('maplink').value;var z=mv.replace(/(.*)&z=/,'').replace(/&pll=(.*)/,'');var ll=mv.replace(/https(.*)\?ll=/,'').split(',');var url=maps+ll[0]+','+ll[1].replace(/&z=(.*)/,'')+'&z='+z;if(mv.indexOf('pll',0)>-1){var pll=mv.replace(/https(.*)pll=/,'').split(',');url+='&q='+pll[0]+','+pll[1]}window.open(url);break;case(location.href.indexOf('https://mission-author-dot-betaspike.appspot.com',0)>-1):var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('https://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open(intel+arr[0]+','+arr[1]+'&z='+arr[2]);break;case(/google(.+)maps/.test(location.href)):var url=location.href.replace(/(.*)@/,'').replace(/z(.*)/,'');var arr=url.split(',');window.open(intel+arr[0]+','+arr[1]+'&z='+arr[2]);break;default:return}})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MapToMap</a>
           </li>
         </ul>
       </li>
@@ -298,7 +300,7 @@
     <hr />
 
     <div class="divExp">
-      <span>■ポータル名から検索くん v2.0(更新日：20150527)</span><br />
+      <span>■ポータル名から検索くん v2.1(更新日：20150913)</span><br />
       [説明]<br />
       ミッション作成ツールで表示させたポータルの近くを、<br />
       Intel Map で表示させる<br />
@@ -312,12 +314,13 @@
       <br />
       [改訂情報]<br />
       ※③の後にGoogle Mapへ行かなくても済むように改良（by Bombas）（v2.0～）<br />
+      ※httpからhttpsに変更しないと上手く飛べなくなってたので修正（v2.1～）
     </div>
     <ul class="ulA">
       <li>
         <ul>
           <li>
-            <a href="javascript:(function(){var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('http://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open('https://www.ingress.com/intel?ll='+arr[0]+','+arr[1]+'&z='+arr[2])})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MissionToIntel</a>
+            <a href="javascript:(function(){var aa=document.getElementsByTagName('a');var url=aa[3].href;url=url.replace('https://maps.google.com/maps?ll=','');url=url.replace('&z=',',');url=url.replace(/&t=(.*)/,'');var arr=url.split(',');window.open('https://www.ingress.com/intel?ll='+arr[0]+','+arr[1]+'&z='+arr[2])})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">MissionToIntel</a>
           </li>
         </ul>
       </li>
@@ -325,7 +328,7 @@
     <hr />
 
     <div class="divExp">
-      <span>■Google Mapで見たいんじゃ v1.0(更新日：20150604)</span><br />
+      <span>■Google Mapで見たいんじゃ v1.1(更新日：20150913)</span><br />
       [説明]<br />
       Intel Map で表示させたポータルを、<br />
       Google Map のピン有りで表示させます<br />
@@ -336,12 +339,14 @@
       ②ブックマークレットを実行<br />
       ③Google Map で開かれる<br />
       <br />
+      [改訂情報]<br />
+      ※httpからhttpsに変更しないと上手く飛べなくなってたので修正（v1.1～）
     </div>
     <ul class="ulA">
       <li>
         <ul>
           <li>
-            <a href="javascript:(function(){var intel='https://www.ingress.com/intel?ll=';if(location.href.indexOf(intel,0)===-1)return;var maps='http://maps.google.co.jp/maps?ll=';displaymaplink();var mv=document.getElementById('maplink').value;var z=mv.replace(/(.*)&z=/,'').replace(/&pll=(.*)/,'');var ll=mv.replace(/https(.*)\?ll=/,'').split(',');var url=maps+ll[0]+','+ll[1].replace(/&z=(.*)/,'')+'&z='+z;if(mv.indexOf('pll',0)>-1){var pll=mv.replace(/https(.*)pll=/,'').split(',');url+='&q='+pll[0]+','+pll[1]}window.open(url)})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">IntelToMap</a>
+            <a href="javascript:(function(){var intel='https://www.ingress.com/intel?ll=';if(location.href.indexOf(intel,0)===-1)return;var maps='https://maps.google.co.jp/maps?ll=';displaymaplink();var mv=document.getElementById('maplink').value;var z=mv.replace(/(.*)&z=/,'').replace(/&pll=(.*)/,'');var ll=mv.replace(/https(.*)\?ll=/,'').split(',');var url=maps+ll[0]+','+ll[1].replace(/&z=(.*)/,'')+'&z='+z;if(mv.indexOf('pll',0)>-1){var pll=mv.replace(/https(.*)pll=/,'').split(',');url+='&q='+pll[0]+','+pll[1]}window.open(url)})();" class="btn" onclick="return false;" title="このボタンをブックマークバーにドラッグ&ドロップ">IntelToMap</a>
           </li>
         </ul>
       </li>
